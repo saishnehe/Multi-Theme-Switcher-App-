@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pacifico&display=swap');
+
+/* Theme 1 - Minimalist */
+.theme1 {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --accent: #3b82f6;
+  --secondary: #f8fafc;
+  --border: #e2e8f0;
+  --font: 'Inter', system-ui, sans-serif;
+  --card-bg: #ffffff;
+  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --button-bg: #3b82f6;
+  --button-text: #ffffff;
+  --button-hover: #2563eb;
+}
+
+/* Theme 2 - Dark Sidebar */
+.theme2 {
+  --bg: #0f0f23;
+  --text: #ffffff;
+  --accent: #ff6b35;
+  --secondary: #1a1a2e;
+  --border: #2d2d44;
+  --font: 'Georgia', serif;
+  --card-bg: #1a1a2e;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --button-bg: #ff6b35;
+  --button-text: #ffffff;
+  --button-hover: #e55a2b;
+  --sidebar-bg: #1a1a2e;
+  --sidebar-text: #b8b8b8;
+}
+
+/* Theme 3 - Colorful Grid */
+.theme3 {
+  --bg: #fff8e7;
+  --text: #2d3748;
+  --accent: #00b894;
+  --secondary: #f7fafc;
+  --border: #e2e8f0;
+  --font: 'Pacifico', cursive;
+  --card-bg: #ffffff;
+  --card-shadow: 0 10px 15px -3px rgba(0, 184, 148, 0.1), 0 4px 6px -2px rgba(0, 184, 148, 0.05);
+  --button-bg: #00b894;
+  --button-text: #ffffff;
+  --button-hover: #00a085;
+  --gradient-start: #667eea;
+  --gradient-end: #764ba2;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  transition: all 0.5s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header theme-specific styling */
+.theme1 header {
+  background: var(--bg);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+.theme2 header {
+  background: var(--secondary);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+.theme3 header {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .theme1 header,
+  .theme2 header,
+  .theme3 header {
+    padding: 0.5rem 1rem;
+  }
+}
