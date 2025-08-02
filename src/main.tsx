@@ -7,7 +7,7 @@ import { ThemeProvider } from './context/ThemeContext';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Multi-Theme-Switcher-App-">
       <ThemeProvider>
         <App />
       </ThemeProvider>
